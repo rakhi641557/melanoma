@@ -1,0 +1,33 @@
+{% extends 'AdminPage.html' %}
+{% block body %}
+<form method="POST" enctype="multipart/form-data">
+   {% csrf_token %} 
+<table align="center">
+<tr>
+    <td><label>Hospital</label></td>
+    <td><input type="text" name="hname" required class="textbox"></td>
+</tr>
+<tr>
+    <td><label>Address</label></td>
+    <td><input type="text" name="address" required class="textbox"></td>
+</tr>
+<tr>
+    <td><label>Phone</label></td>
+    <td><input type="text" name="phone" required class="textbox"></td>
+</tr>
+<tr>
+    <td><label>Email</label></td>
+    <td><input type="text" name="email" required class="textbox"></td>
+</tr>
+<tr>
+    <td><input type="submit" value="Add" name="Add" required class="but"/></td>
+</tr>
+</table>
+
+</form>
+{% if msg %}
+<script>
+    alert("{{msg}}")
+</script>
+{% endif %}
+{% endblock %}
